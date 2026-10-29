@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#07111f" />
+  <title>Flaend Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loading-screen" aria-live="polite">
+    <div class="loading-panel">
+      <div class="eyebrow">FLAEND SYSTEMS // BOOT SEQUENCE</div>
+      <img id="loading-image" src="images/loading-screen.png" alt="Flaend Simulator loading artwork" />
+      <h1>FLAEND <span>SIMULATOR</span></h1>
+      <p class="loading-subtitle">Waking up your robot...</p>
+      <div class="progress-track"><div id="progress-fill"></div></div>
+      <div class="loading-meta"><span id="loading-status">INITIALIZING WORLD</span><span id="loading-percent">0%</span></div>
+      <p class="image-hint">Your artwork: <code>images/loading-screen.png</code></p>
+    </div>
+  </div>
+
+  <main id="game-shell" class="hidden">
+    <canvas id="game-canvas" aria-label="Flaend Simulator 3D game"></canvas>
+    <div class="hud top-left">
+      <div class="brand-mark">F<span>/</span>S</div>
+      <div><strong>FLAEND SIMULATOR</strong><small>FREE ROAM // BUILD 0.1</small></div>
+    </div>
+    <div class="hud top-right">
+      <div class="status-dot"></div><span id="world-status">WORLD ONLINE</span>
+      <button id="camera-button" class="hud-button">CAMERA: THIRD</button>
+    </div>
+    <div class="crosshair" id="crosshair"></div>
+    <div class="location-card"><span class="tiny-label">CURRENT LOCATION</span><strong>NEON DISTRICT</strong><small>Explore freely. No missions.</small></div>
+    <div class="hint-card" id="desktop-hint">WASD move · Mouse look · Space jump · C switch camera</div>
+    <div class="mobile-controls" id="mobile-controls">
+      <div class="joystick" id="joystick"><div class="stick" id="stick"></div></div>
+      <div class="mobile-buttons"><button id="jump-button">JUMP</button><button id="mobile-camera-button">VIEW</button></div>
+    </div>
+    <div class="start-overlay" id="start-overlay">
+      <div class="start-card">
+        <div class="eyebrow">WELCOME, UNIT 001</div>
+        <h2>Ready to roam?</h2>
+        <p>Explore a neon city as Flaend. Walk, jump, look around, and switch between first- and third-person views.</p>
+        <button id="start-button" class="primary-button">ENTER THE CITY <span>↗</span></button>
+        <small>On desktop, click the game to lock the mouse. On mobile, use the joystick.</small>
+      </div>
+    </div>
+    <div class="bottom-bar"><span>FLAEND OS <b>● ONLINE</b></span><span>FREE ROAM ENABLED</span><span id="coords">X 0 · Z 0</span></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
